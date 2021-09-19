@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $montserrat;
+    overflow-y: scroll;
+    background-color: $grey;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    
+    @media (max-width: 1680px) {
+        padding: 0 90px;
+    }
+
+    @media (max-width: 890px) {
+        padding: 0 60px;
+    }
+
+    @media (max-width: 390px) {
+        padding: 0 40px;
+    }
+}
+
+.button {
+    display: inline-block;
+    font-family: $montserrat;
+    min-width: 240px;
+    height: 48px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-radius: 5px;
+    border: none;
+}
+
+.buttonPrimary {
+    box-shadow: 0 5px 15px rgb(22, 21, 24, 0.2);
+    color: $darkGrey;
+    background-color: $white;
+
+    &:hover {
+        background-color: $mildGrey;
+        box-shadow: 0 5px 15px rgb(22, 21, 24, 0.25);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.buttonSecondary {
+    min-width: 180px;
+    height: 40px;
+    font-size: 0.97rem;
+    background-color: $green;
+    color: $grey;
+    font-weight: 600;
+    padding: 0;
+    box-shadow: 0 5px 15px rgb(22, 21, 24, 0.18);
+
+    &:hover {
+        background-color: #37a167;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.buttonTertiary {
+    min-width: 180px;
+    height: 40px;
+    font-size: 0.97rem;
+    background-color: $blue;
+    color: $grey;
+    font-weight: 600;
+    padding: 0;
+    box-shadow: 0 5px 15px rgb(22, 21, 24, 0.18);
+
+    &:hover {
+        background-color: #336ce7;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.buttonDisabled {
+    background-color: $grey;
+    color: #b8b8b8;
+    cursor: not-allowed;
+}
+
+.buttonSpan {
+    font-weight: 600;
+}

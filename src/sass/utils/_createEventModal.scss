@@ -1,0 +1,103 @@
+.createEventModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    background-color: $mildGrey;
+    border-radius: 10px;
+    width: 470px;
+    height: fit-content;
+    // height: 346px;
+    padding: 45px 45px;
+    z-index: 25;
+    pointer-events: none;
+    opacity: 0;
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .modalContainer {
+        .closeIcon {
+            cursor: pointer;
+            position: absolute;
+            color: $darkBlue;
+            font-size: 1.65rem;
+            top: 12px;
+            right: 10px;
+            z-index: 35;
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            color: $darkBlue;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            width: 100%;
+
+            .error {
+                background-color: #c90101;
+                font-size: 0.95rem;
+                color: $white;
+                padding: 10px 10px;
+                border-radius: 4px;
+                margin-bottom: 15px;
+            }
+
+            .inputGroup {
+                width: 100%;
+                margin-bottom: 25px;
+
+                .nameLabel {
+                    display: inline-block;
+                    font-weight: 600;
+                    color: $strongGrey;
+                    font-size: 0.85rem;
+                    margin-bottom: 8px;
+                }
+
+                input.nameInput {
+                    color: $strongGrey;
+                    width: 100%;
+                    border: none;
+                    height: 20px;
+                    border-radius: 4px;
+                    outline: none;
+
+                    padding: 20px 10px;
+                    font-family: $montserrat;
+                    font-size: 0.975rem;
+                    font-weight: 600;
+
+
+                    &:focus {
+                        box-shadow: 0 0 0 2px rgb(64 123 255);
+                    }
+                }
+            }
+
+            .buttonMargin {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 570px) {
+            // margin: auto auto;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 570px) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

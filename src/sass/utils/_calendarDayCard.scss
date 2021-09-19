@@ -1,0 +1,189 @@
+.calendarDayCard {
+    position: relative;
+    height: 250px;
+    background-color: $mildGrey;
+    box-shadow: 0 5px 10px rgba(100, 100, 100, 0.25);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 25px 0;
+    text-align: center;
+    overflow-y: auto;
+    transition: all 0.25s ease;
+
+    &.hasEvent {
+        background-color: rgba(206, 206, 206, 0.7);
+        box-shadow: 0 2px 10px rgba(41, 54, 83, 0.38);
+
+        &:hover {
+            box-shadow: 0 2px 10px rgba(41, 54, 83, 0.65);
+        }
+    }
+
+    &:first-of-type {
+        background-color: rgba(64, 123, 255, 0.08);
+        box-shadow: 0 2px 10px rgba(41, 54, 83, 0.45);
+
+        &:hover {
+            box-shadow: 0 2px 10px rgba(41, 54, 83, 0.65);
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 2px 10px rgba(41, 54, 83, 0.45);
+    }
+
+    .wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+
+    .dateIndicator {
+        position: relative;
+        z-index: 10;
+        font-weight: 600;
+        font-size: 1rem;
+
+        p {
+            color: $darkBlue;
+            text-align: center;
+        }
+
+        @media (max-width: 1525px) {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1525px) {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1385px) {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 725px) {
+            font-size: 1rem;
+        }
+    }
+
+    .calendarImg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        color: $darkBlue;
+        opacity: 0.05;
+        z-index: 2;
+
+        @media (max-width: 1385px) {
+            top: 55%;
+            font-size: 3.5rem;
+        }
+    }
+
+    .event {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 5;
+
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.15s ease-in;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
+
+            .summary {
+                max-width: 80px;
+                color: $darkBlue;
+                font-weight: 600;
+
+                @media (max-width: 1680px) {
+                    max-width: 60px;
+                }
+
+                @media (max-width: 1525px) {
+                    max-width: 100px;
+                }
+
+                @media (max-width: 725px) {
+                    width: 100%;
+                }
+            }
+
+            .startEnd {
+                align-items: center;
+
+                @media (max-width: 1525px) {
+                    margin: 5px 0;
+                }
+            }
+
+            .delete {
+                position: relative;
+                color: #991c1c;
+                transition: all 0.15s;
+                z-index: 30;
+                cursor: pointer;
+                font-size: 1.5rem;
+
+                &:hover {
+                    color: #af2b2b;
+                    transform: translateY(-1px);
+                }
+
+                @media (max-width: 1525px) {
+                    font-size: 1.25rem;
+                }
+            }
+
+            @media (max-width: 1680px) {
+                font-size: 0.75rem;
+            }
+
+            @media (max-width: 1525px) {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            @media (max-width: 1385px) {
+                font-size: 0.65rem;
+            }
+
+            @media (max-width: 725px) {
+                font-size: 0.9rem;
+                flex-direction: row;
+                max-width: 85%;
+                margin: 0 auto;
+            }
+            
+            @media (max-width: 398px) {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 725px) {
+            width: 100%;
+            align-self: center;
+        }
+    }
+
+    @media (max-width: 1680px) {
+        height: 230px;
+    }
+
+    @media (max-width: 1385px) {
+        height: 200px;
+    }
+}

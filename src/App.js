@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {AuthProvider} from './googleAuth/AuthContext'
+import Navbar from './components/layout/Navbar'
+import Login from './components/pages/Login'
+import Calendar from './components/pages/Calendar'
+import PrivateComponent from './components/utils/PrivateComponent'
+import HamburgerMenu from './components/layout/HamburgerMenu'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthProvider>
+      <Router>
+        
+        <Switch>
+          <Route exact path='/'>
+            <PrivateComponent component={Login} forbidRoute='/' />
+          </Route>
+
+          <Route path='/calendar'>
+            <Navbar />
+            <HamburgerMenu />
+            <PrivateComponent component={Calendar} forbidRoute='calendar' />
+          </Route>
+        </Switch>
+
+      </Router>
+    </AuthProvider>
+  )
 }
 
 export default App;

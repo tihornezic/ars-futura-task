@@ -1,0 +1,111 @@
+.calendar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .headingRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 75px;
+        margin-bottom: 50px;
+
+        h1 {
+            color: $darkBlue;
+            font-size: 1.7rem;
+
+            @media (max-width: 890px) {
+                max-width: 300px;
+                font-size: 1.5rem;
+            }
+
+            @media (max-width: 725px) {
+                align-self: flex-start;
+                max-width: 100%;
+                font-size: 2rem;
+            }
+        }
+
+        .orderBy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                font-weight: 500;
+                margin-right: 10px;
+            }
+
+            @media (max-width: 725px) {
+                margin-top: 40px;
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            margin-top: 40px;
+        }
+
+        @media (max-width: 725px) {
+            flex-direction: column;
+            margin-bottom: 25px;
+        }
+    }
+
+    .subHeadingRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .buttonsRow {
+            display: flex;
+            align-items: center;
+
+            .refreshIcon {
+                margin-left: 20px;
+                cursor: pointer;
+                font-size: 1.75rem;
+                color: $orange;
+                transition: all 0.2s ease;
+                transform: rotate(-20deg);
+
+                &:hover {
+                    color: #be641a;
+                    transform: rotate(10deg);
+                }
+            }
+
+            @media (max-width: 725px) {
+                align-self: flex-start;
+            }
+        }
+
+        .dateTime {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: $darkBlue;
+
+            @media (max-width: 725px) {
+                align-self: flex-start;
+                font-size: 1.4rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 725px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 25px;
+        margin-bottom: 70px;
+
+        @media (max-width: 725px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
