@@ -9,8 +9,12 @@ export function useAuth() {
 
 export function AuthProvider({children}) {
     let gapi = window.gapi
-    let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
-    let API_KEY = process.env.REACT_APP_API_KEY
+    // let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
+    // let API_KEY = process.env.REACT_APP_API_KEY
+
+    let CLIENT_ID = '212286380330-jma6b2l8ad4rhd5tai0sfr3g2mbptjuv.apps.googleusercontent.com'
+    let API_KEY = 'AIzaSyA8FtZ-MGB_23Jy99W1FzmqmLx0bcAUz-k'
+
     let DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
     let SCOPES = 'https://www.googleapis.com/auth/calendar'
 
@@ -23,7 +27,7 @@ export function AuthProvider({children}) {
     // saving global state user object to local storage
     useEffect(() => {
         localStorage.setItem('User', JSON.stringify(user))
-    }) 
+    })
 
     // client initialization
     useEffect(() => {
