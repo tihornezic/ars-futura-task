@@ -10,9 +10,11 @@ export function useAuth() {
 export function AuthProvider({children}) {
     let gapi = window.gapi
 
-    // 
-    let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
-    let API_KEY = process.env.REACT_APP_API_KEY
+    // let CLIENT_ID = process.env.REACT_APP_CLIENT_ID 
+    // let API_KEY = process.env.REACT_APP_API_KEY
+    
+    let CLIENT_ID = '212286380330-jma6b2l8ad4rhd5tai0sfr3g2mbptjuv.apps.googleusercontent.com'
+    let API_KEY = 'AIzaSyAX4HvRWegJQZKqWYq_o53gWYOdMVcGzkA'
 
     let DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
     let SCOPES = 'https://www.googleapis.com/auth/calendar'
