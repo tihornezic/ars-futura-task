@@ -9,6 +9,8 @@ export function useAuth() {
 
 export function AuthProvider({children}) {
     let gapi = window.gapi
+
+    // 
     let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
     let API_KEY = process.env.REACT_APP_API_KEY
 
