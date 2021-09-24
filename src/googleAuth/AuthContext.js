@@ -9,11 +9,8 @@ export function useAuth() {
 
 export function AuthProvider({children}) {
     let gapi = window.gapi
-    // let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
-    // let API_KEY = process.env.REACT_APP_API_KEY
-
-    let CLIENT_ID = '212286380330-jma6b2l8ad4rhd5tai0sfr3g2mbptjuv.apps.googleusercontent.com'
-    let API_KEY = 'AIzaSyA8FtZ-MGB_23Jy99W1FzmqmLx0bcAUz-k'
+    let CLIENT_ID = process.env.REACT_APP_CLIENT_ID
+    let API_KEY = process.env.REACT_APP_API_KEY
 
     let DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
     let SCOPES = 'https://www.googleapis.com/auth/calendar'
@@ -69,16 +66,17 @@ export function AuthProvider({children}) {
                         dispatch({
                             type: 'SUBSCRIBE_USER',
                             payload: {
-                                fullName: res.Vs.Pe,
-                                name: res.Vs.zU,
-                                lastName: res.Vs.zS,
-                                email: res.Vs.Gt,
+                                // new  objects names
+                                fullName: res.ht.Re,
+                                name: res.ht.HU,
+                                lastName: res.ht.YS,
+                                email: res.ht.St,
                             }
                         })
                     )
                 })
-                .catch(() => {
-                    reject('Error while signing in.')
+                .catch((err) => {
+                    reject(err)
                 })
         })
     }
